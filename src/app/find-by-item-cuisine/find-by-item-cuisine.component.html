@@ -1,0 +1,43 @@
+<div>
+    <h3>Find Item by Cuisine</h3>
+
+    <td><input type="text" [(ngModel)]="itemCuisine" placeholder="Item Cuisine"></td>
+    <br />
+    <button (click)="findByItemCuisine()">Find Item</button>
+    <br />
+    <br />
+    <br />
+    <!-- <h4>Item Details</h4>
+    <table>
+        <th>Item Id</th>
+        <th>Item Name</th>
+        <th>Item Image</th>
+        <th>Item Cuisine</th>
+        <th>Item Price</th>
+        <tr *ngFor="let item of items">
+            <td>{{item.itemId}}</td>
+            <td>{{item.itemName| titlecase}}</td>
+            <td class="img-hover-zoom"><img class="images" src="{{item.itemImage}}" alt="Card image cap"></td>
+            <td>{{item.itemCuisine | titlecase}}</td>
+            <td>{{item.itemPrice| currency:'INR'}}</td>
+            <td><button class="btn btn-primary" (click)="addToCart(item)">Add to Cart</button></td>
+        </tr>
+    </table>  -->
+</div>
+<h4>Items Matching your search results</h4>
+<br />
+<br />
+<div class="row">
+    <div *ngFor="let item of items" class="card" style="width: 14rem; float: left;margin-bottom: 3rem;">
+        <td class="img-hover-zoom"><img class="card-img-top img-hover-zoom" src="{{item.itemImage}}" alt="Card image cap"></td>
+        <div class="card-body">
+            <h5 class="card-text cardheading">{{item.itemName | titlecase }}</h5>
+            <h6 class="card-text cardcontent">Id: {{item.itemId}}</h6>
+            <h6 class="card-text cardcontent">Cuisine: {{item.itemCuisine}}</h6>
+            <h6 class="card-text cardcontent">Description: {{item.description}}</h6>
+            <h6 class="card-text btn" style="background-color: rgb(224, 221, 29);">Price: {{item.itemPrice | currency:'INR'}}</h6>
+            <button class="btn btn-primary" (click)="addToCart(item)">Add to Cart</button>
+        </div>
+    </div>
+</div>
+

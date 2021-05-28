@@ -1,0 +1,31 @@
+<div>
+    <h4>Create Item</h4>
+    <table>
+        <tr>
+            <td><input type="text" [(ngModel)]="item.itemName" placeholder="Item Name"></td>
+        </tr>
+
+        <tr>
+            <td><input type="text" [(ngModel)]="item.itemImage" placeholder="Image"></td>
+        </tr>
+
+        <tr>
+            <td><input type="number" [(ngModel)]="item.itemPrice" placeholder=" Item Price"></td>
+        </tr>
+
+        <tr>
+            <td><input type="text" [(ngModel)]="item.itemCuisine" placeholder=" Item Cuisine"></td>
+        </tr>
+
+        <tr>
+            <td><input type="text" [(ngModel)]="item.description" placeholder=" Item Description"></td>
+        </tr>
+
+        <tr>
+            <td><input type="number" [(ngModel)]="item.quantity" placeholder=" Item Quantity"></td>
+        </tr>
+        
+    </table>
+    <br />
+    <button (click)="createItem()">Create Item</button>
+</div>

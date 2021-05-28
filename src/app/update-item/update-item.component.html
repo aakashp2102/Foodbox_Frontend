@@ -1,0 +1,37 @@
+<div>
+    <h3>Update Item</h3>
+    <form #Item="ngForm" (ngSubmit)="updateItem()">
+        <table>
+            <tr><td><input type="number" [(ngModel)]="item.itemId" [ngModelOptions]="{standalone: true}" placeholder="Item Id"></td></tr>
+            <tr><td><input type="text" [(ngModel)]="item.itemName" [ngModelOptions]="{standalone: true}" placeholder="Item Name"></td></tr>
+            <tr><td><input type="url" [(ngModel)]="item.itemImage" [ngModelOptions]="{standalone: true}" placeholder="Image"></td></tr>
+            <tr><td><input type="text" [(ngModel)]="item.itemCuisine" [ngModelOptions]="{standalone: true}" placeholder=" Item Cuisine"></td></tr>
+            <tr><td><input type="text" [(ngModel)]="item.description" [ngModelOptions]="{standalone: true}" placeholder=" Item description"></td></tr>
+            <tr><td><input type="text" [(ngModel)]="item.itemPrice" [ngModelOptions]="{standalone: true}" placeholder=" Item Price"></td></tr>
+        </table>
+        <br/>
+        <button type="submit">Update Item</button>
+    </form>
+    <br />
+
+    <table>
+        <th>Item Id</th>
+        <th>Item Name</th>
+        <th>Item Image</th>
+        <th>Item Category</th>
+        <th>Description</th>
+        <th>Item Price</th>
+        <tr *ngFor="let Item of items">
+            <td>{{Item.itemId}}</td>
+            <td>{{Item.itemName | titlecase}}</td>
+            <td class="img-hover-zoom"><img class="images" src="{{Item.itemImage}}" /></td>
+            <td>{{Item.itemCuisine | titlecase}}</td>
+            <td>{{Item.description | titlecase}}</td>
+            <td>{{Item.itemPrice| currency:'INR'}}</td>
+        </tr>
+    </table>
+    <br />
+    <br />
+    <br />
+    <br />
+</div>

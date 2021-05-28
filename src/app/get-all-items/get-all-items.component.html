@@ -1,0 +1,18 @@
+<br />
+<br />
+<div class="row">
+    <div *ngFor="let item of items" class="card" style="width: 14rem; margin-left:auto;margin-bottom: 3rem;">
+        <td class="img-hover-zoom"><img class="card-img-top img-hover-zoom" src="{{item.itemImage}}" alt="Card image cap"></td>
+        <div class="card-body">
+            <h5 class="card-text cardheading">{{item.itemName | titlecase }}</h5>
+            <h6 class="card-text cardcontent">Id: {{item.itemId}}</h6>
+            <h6 class="card-text cardcontent">Cuisine: {{item.itemCuisine}}</h6>
+            <h6 class="card-text cardcontent">Description: {{item.description}}</h6>
+            <h6 class="card-text btn" style="background-color: rgb(224, 221, 29);">Price: {{item.itemPrice | currency:'INR'}}</h6>
+            <button class="btn btn-primary" (click)="addToCart(item)"><svg width="1.3em" height="1.3em" viewBox="0 0 16 16" class="bi bi-cart-plus" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
+                <path fill-rule="evenodd" d="M8.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H9v1.5a.5.5 0 0 1-1 0V8H6.5a.5.5 0 0 1 0-1H8V5.5a.5.5 0 0 1 .5-.5z"/>
+              </svg>  Add to Cart</button>
+        </div>
+    </div>
+</div>

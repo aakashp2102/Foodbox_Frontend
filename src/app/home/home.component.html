@@ -1,0 +1,79 @@
+<!-- <h4>Items List</h4>
+<br />
+<br />
+<div class="row">
+    <div *ngFor="let item of items" class="card" style="width: 14rem; margin-left:auto;margin-bottom: 3rem;">
+        <td class="img-hover-zoom"><img class="card-img-top img-hover-zoom" src="{{item.itemImage}}" alt="Card image cap"></td>
+        <div class="card-body">
+            <h5 class="card-text cardheading">{{item.itemName | titlecase }}</h5>
+            <h6 class="card-text cardcontent">Id: {{item.itemId}}</h6>
+            <h6 class="card-text cardcontent">Cuisine: {{item.itemCuisine}}</h6>
+            <h6 class="card-text cardcontent">Description: {{item.description}}</h6>
+            <h6 class="card-text btn" style="background-color: rgb(224, 117, 29);">Price: {{item.itemPrice | currency:'INR'}}</h6>
+        </div>
+    </div>
+</div> -->
+
+<!-- <div class="card mt-4">
+    <h4 class="card-header">Home</h4>
+    <div class="card-body">
+        <p>You're logged in with Angular 8 & JWT!!</p>
+        <p>Your role is: <strong>{{currentUser.role}}</strong>.</p>
+        <p>This page can be accessed by <u>all authenticated users</u>.</p>
+        <p class="mb-1">Current user from secure api end point:</p>
+        <div *ngIf="loading" class="spinner-border spinner-border-sm"></div>
+        <ul *ngIf="userFromApi">
+            <li>{{userFromApi.firstName}} {{userFromApi.lastName}}</li>
+        </ul>
+    </div>
+</div> -->
+
+<h1>Welcome to FoodBox Admin Portal</h1>
+<!-- <h3>All registered users:</h3>
+<ul>
+    <li *ngFor="let user of users">
+        {{user.username}} ({{user.firstName}} {{user.lastName}})
+        - <a (click)="deleteUser(user.id)" class="text-danger">Delete</a>
+    </li>
+</ul> -->
+
+<br />
+<h4 style="text-decoration:underline">Registered User Details</h4>
+<br />
+<br />
+     <table>
+        <th>User Id</th>
+        <th>Login User Name</th>
+        <th>User First Name</th>
+        <th>User Last Name</th>
+        <th>User Address</th>
+        <th>User Phone Number</th>
+        <th>User Date of Birth</th>
+        <th>Delete user</th>
+        <tr *ngFor="let user of users">
+            <td>{{user.id}}</td>
+            <td>{{user.username}}</td>
+            <td>{{user.firstName | titlecase}}</td>
+            <td>{{user.lastName | titlecase}}</td>
+            <td>{{user.address}}</td>
+            <td>{{user.phone}}</td>
+            <td>{{user.dateOfBirth}}</td>
+            <td><button (click)="deleteUser(user.id)" class="btn-sm" style="background-color: rgb(247, 77, 47);border:solid;"><svg width="1.2em" height="1.2em" viewBox="0 0 16 16" class="bi bi-trash" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+                <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4L4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+              </svg>  Delete</button></td>
+        </tr>
+    </table> 
+
+    <style>
+        table,th,tr,td {    text-align: center;
+    align-content: center;
+    border-style: solid;
+    border-color: black;
+    border-radius: 1px;
+    background-color: rgb(216, 200, 170);}
+    th{
+    background: linear-gradient(0deg, #f87878 0%, #f87e7e 10%, #dce92c 50%, #f87e7e 90%, #f87878 100%);
+    }
+ 
+    </style>    

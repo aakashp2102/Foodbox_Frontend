@@ -1,0 +1,30 @@
+<div>
+    <h4>Find Item by Id</h4>
+
+    <td><input type="number" [(ngModel)]="itemId" placeholder="Item Id"></td>
+    <br />
+    <button (click)="findByItemId()">Find Item</button>
+    <br />
+    <br />
+    <br />
+    <h4>Item Details</h4>
+
+    <table>
+        <th>Item Id</th>
+        <th>Item Name</th>
+        <th>Item Image</th>
+        <th>Item Cuisine</th>
+        <th>Item Price</th>
+		<th>Item Description</th>
+		
+        <tr>
+            <td>{{item.itemId}}</td>
+            <td>{{item.itemName}}</td>
+            <td class="img-hover-zoom"><img class="images" src="{{item.itemImage}}" alt="Card image cap"></td>
+            <td>{{item.itemCuisine}}</td>
+            <td>{{item.itemPrice| currency:'INR'}}</td>
+			<td>{{item.description}}</td>
+        </tr>
+    </table>
+
+</div>
